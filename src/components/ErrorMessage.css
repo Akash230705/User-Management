@@ -1,0 +1,40 @@
+.error-container {
+    width: 100%;
+    max-width: 500px;
+
+    margin: 30px auto;
+    padding: 20px;
+
+    text-align: center;
+
+    background-color: #ffe5e5;
+    border: 1px solid #ffb3b3;
+    border-radius: 10px;
+}
+
+.error-container h3 {
+    color: #d32f2f;
+    margin-bottom: 10px;
+}
+
+.error-container p {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.retry-btn {
+    background-color: #2563eb;
+    color: white;
+
+    border: none;
+    border-radius: 6px;
+
+    padding: 10px 20px;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.retry-btn:hover {
+    background-color: #1d4ed8;
+}

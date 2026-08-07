@@ -1,0 +1,212 @@
+/* ===========================
+   Modal
+=========================== */
+
+.modal-content{
+    width: 720px;
+    max-width: 95%;
+    padding: 35px;
+
+    border-radius: 24px;
+
+    background: linear-gradient(
+        145deg,
+        #ffffff,
+        #eef5ff
+    );
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.25);
+
+    animation: popup .3s ease;
+}
+
+@keyframes popup{
+    from{
+        opacity:0;
+        transform:scale(.9);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+/* ===========================
+   Form Grid
+=========================== */
+
+.user-form__grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:22px;
+    margin-top:25px;
+}
+
+@media(max-width:650px){
+
+.user-form__grid{
+    grid-template-columns:1fr;
+}
+
+}
+
+/* ===========================
+   Labels
+=========================== */
+
+.user-form__field{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+
+.user-form__field label{
+
+    font-size:15px;
+    font-weight:700;
+
+    color:#1e3a8a;
+}
+
+/* ===========================
+   Inputs
+=========================== */
+
+.user-form__field input{
+
+    padding:14px 18px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:#ffffff;
+
+    box-shadow:
+        inset 0 0 0 2px #dbeafe;
+
+    transition:.3s;
+
+    font-size:15px;
+}
+
+.user-form__field input::placeholder{
+    color:#94a3b8;
+}
+
+.user-form__field input:hover{
+
+    box-shadow:
+        inset 0 0 0 2px #60a5fa;
+}
+
+.user-form__field input:focus{
+
+    outline:none;
+
+    background:#fff;
+
+    box-shadow:
+        inset 0 0 0 2px #2563eb,
+        0 0 15px rgba(37,99,235,.35);
+
+    transform:translateY(-2px);
+}
+
+/* ===========================
+   Error
+=========================== */
+
+.user-form__error{
+    color:#ef4444;
+    font-size:13px;
+}
+
+/* ===========================
+   Buttons
+=========================== */
+
+.form-buttons{
+
+    margin-top:35px;
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:18px;
+}
+
+/* Cancel */
+
+.cancel-btn{
+
+    padding:12px 28px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:linear-gradient(
+        135deg,
+        #f97316,
+        #ea580c
+    );
+
+    color:white;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.cancel-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 12px 25px rgba(249,115,22,.4);
+}
+
+/* Add User */
+
+.a-button{
+
+    padding:12px 30px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #7c3aed
+    );
+
+    color:white;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.a-button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 12px 25px rgba(37,99,235,.4);
+}
+
+.a-button:active{
+
+    transform:scale(.97);
+}
