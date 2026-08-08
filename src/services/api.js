@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "https://user-management-api-uutq.onrender.com/";
+const BASE_URL = "https://user-management-api-uutq.onrender.com/users";
 
 // GET - Fetch all users
 export const fetchUsers = async () => {
