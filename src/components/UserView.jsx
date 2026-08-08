@@ -14,7 +14,7 @@ function UserView() {
         const fetchUser = async () => {
             try {
                 const response = await axios.get(
-                    `http://localhost:3000/users/${id}`
+                    `https://user-management-api-uutq.onrender.com/users/${id}`
                 );
 
                 setUser(response.data);
