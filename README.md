@@ -1,229 +1,152 @@
-# 👥 User Management System
+# User Management System
 
-A modern and responsive **User Management System** built using **React, Vite, Axios, React Router, and JSON Server**. The application provides a clean dashboard interface for managing user records through CRUD operations.
+A modern and responsive **User Management System** built with React, Vite, Axios, React Router, and JSON Server. The application provides complete CRUD functionality for managing user information with a clean and responsive interface.
 
-## 🚀 Features
-
-- 👤 Add new users
-- 🔍 Search users
-- 👁️ View individual user details
-- ✏️ Edit existing users
-- 🗑️ Delete users
-- 📝 Form validation
-- 🌐 REST API integration using JSON Server
-- ⚡ Axios-based API communication
-- 🧭 Client-side routing with React Router
-- 📱 Responsive user interface
-- 🎨 Modern and premium UI design
-- ❌ Custom 404 / Not Found page
-- 🧩 Reusable React components
-
-## 🛠️ Technology Stack
+## Live Demo
 
 ### Frontend
-- React
-- JavaScript (ES6+)
-- HTML5
-- CSS3
-
-### API / Backend
-- JSON Server
-- Axios
-
-### Routing
-- React Router DOM
-
-### Build Tool
-- Vite
-
-### Development Tools
-- VS Code
-- npm
-- Git
-- GitHub
-
-## 🏗️ Application Architecture
+Replace this with your actual Vercel deployment URL:
 
 ```text
-User Management System
-│
-├── React Application
-│   ├── Navbar
-│   ├── Home
-│   ├── User List
-│   ├── User Form
-│   ├── User Details
-│   └── Not Found
-│
-├── Axios
-│   └── REST API Communication
-│
-└── JSON Server
-    └── db.json
-        └── Users
+https://your-vercel-url.vercel.app
 ```
 
-## 📁 Project Structure
+### Backend API
 
 ```text
-user-management-system/
-│
+https://user-management-api-uutq.onrender.com/users
+```
+
+## Features
+
+- Add new users
+- View all users
+- View individual user details
+- Edit existing users
+- Delete users
+- Search users
+- Form validation
+- Loading spinner
+- Error handling
+- Responsive design
+- REST API integration
+- Dynamic routing
+- Axios API communication
+- Toast notifications
+- Modern UI design
+- Production deployment
+
+## Technology Stack
+
+### Frontend
+- React.js
+- Vite
+- JavaScript ES6+
+- HTML5
+- CSS3
+- Axios
+- React Router DOM
+- React Icons
+- React Loader Spinner
+- React Toastify
+- SweetAlert2
+- Poppins Font
+
+### Backend
+- JSON Server
+- REST API
+- db.json
+
+### Development & Deployment
+- Git
+- GitHub
+- Vercel
+- Render
+- npm
+- VS Code
+
+## Application Architecture
+
+```text
+                         GitHub
+                           |
+             +-------------+-------------+
+             |                           |
+             v                           v
+          Vercel                       Render
+             |                           |
+       React + Vite                JSON Server
+             |                           |
+             |                         db.json
+             |                           |
+             +--------- Axios -----------+
+```
+
+## Project Structure
+
+```text
+User-Management/
+|
 ├── public/
 ├── src/
 │   ├── components/
+│   │   ├── ErrorMessage.css
+│   │   ├── ErrorMessage.jsx
+│   │   ├── Loader.css
+│   │   ├── Loader.jsx
+│   │   ├── Modal.css
+│   │   ├── Modal.jsx
+│   │   ├── Navbar.css
+│   │   ├── Navbar.jsx
+│   │   ├── UserCard.css
+│   │   ├── UserCard.jsx
+│   │   ├── UserForm.css
+│   │   ├── UserForm.jsx
+│   │   ├── UserView.css
+│   │   └── UserView.jsx
 │   ├── pages/
+│   │   ├── Home.css
+│   │   ├── Home.jsx
+│   │   ├── UserDetailPage.css
+│   │   └── UserDetailPage.jsx
+│   ├── services/
+│   │   └── api.js
+│   ├── styles/
+│   │   └── index.css
 │   ├── App.jsx
 │   └── main.jsx
-│
 ├── db.json
 ├── package.json
 ├── package-lock.json
 ├── vite.config.js
+├── vercel.json
 ├── .gitignore
 └── README.md
 ```
 
-> The exact component and page filenames may vary based on the current project implementation.
+## API Configuration
 
-## ⚙️ Prerequisites
+Axios communicates with the deployed JSON Server API through `src/services/api.js`.
 
-Make sure the following are installed:
+```javascript
+import axios from "axios";
 
-- Node.js
-- npm
-- Git
-
-Check the installed versions:
-
-```bash
-node -v
-npm -v
-git --version
+const BASE_URL = "https://user-management-api-uutq.onrender.com/users";
 ```
 
-## 📥 Installation
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
-```
-
-### 2. Navigate to the Project
-
-```bash
-cd user-management-system
-```
-
-### 3. Install Dependencies
-
-```bash
-npm install
-```
-
-## 🗄️ Start JSON Server
-
-The application uses JSON Server as a lightweight REST API.
-
-Run:
-
-```bash
-npx json-server --watch db.json --port 3000
-```
-
-The API will be available at:
-
-```text
-http://localhost:3000
-```
-
-Users endpoint:
-
-```text
-http://localhost:3000/users
-```
-
-## ▶️ Start the React Application
-
-Open another terminal and run:
-
-```bash
-npm run dev
-```
-
-The Vite development server will run at:
-
-```text
-http://localhost:5173
-```
-
-## 🔗 API Endpoints
+### API Endpoints
 
 | Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/users` | Get all users |
-| GET | `/users/:id` | Get a specific user |
+|---|---|---|
+| GET | `/users` | Fetch all users |
+| GET | `/users/:id` | Fetch a specific user |
 | POST | `/users` | Create a new user |
-| PUT | `/users/:id` | Update a user |
+| PUT | `/users/:id` | Update an existing user |
 | DELETE | `/users/:id` | Delete a user |
 
-Example:
+## Database
 
-```text
-GET http://localhost:3000/users/1
-```
-
-## 🧭 Application Routes
-
-| Route | Description |
-|-------|-------------|
-| `/` | Home / User List |
-| `/users/:id` | User Details |
-| `*` | Not Found Page |
-
-Example:
-
-```text
-http://localhost:5173/users/1
-```
-
-## 🔄 CRUD Operations
-
-### Create
-Creates a new user using the user form.
-
-```text
-POST /users
-```
-
-### Read
-Retrieves all users or a specific user using Axios.
-
-```javascript
-axios.get("http://localhost:3000/users");
-```
-
-```javascript
-axios.get(`http://localhost:3000/users/${id}`);
-```
-
-### Update
-Updates an existing user's information.
-
-```text
-PUT /users/:id
-```
-
-### Delete
-Removes a user from the system.
-
-```text
-DELETE /users/:id
-```
-
-## 🗃️ Database
-
-The project uses `db.json` as a local data source through JSON Server.
+The project uses `db.json` as the data source for JSON Server.
 
 Example:
 
@@ -231,71 +154,232 @@ Example:
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Akash Kumar",
       "email": "akash@gmail.com",
       "phone": "9876543210",
-      "company": "Example Company",
-      "website": "example.com"
+      "company": "OpenAI",
+      "website": "akash.dev"
     }
   ]
 }
 ```
 
-## 🎨 UI & Design
+## Application Routes
 
-The application uses a modern dashboard-oriented design with:
+| Route | Description |
+|---|---|
+| `/` | Home / User List |
+| `/users/:id` | Individual User Details |
+| `*` | Not Found Page |
 
-- Premium color combinations
-- Gradient components
-- Modern user cards
-- Rounded UI elements
-- Interactive buttons
-- Hover animations
-- Responsive forms
-- Centered user detail views
-- Clean navigation
-- Consistent spacing and typography
+## CRUD Operations
 
-## 📱 Responsive Design
+### Create
 
-The interface is designed to work across:
+```text
+POST /users
+```
 
-- 💻 Desktop
-- 💻 Laptop
-- 📱 Tablet
-- 📱 Mobile
+### Read
 
-CSS media queries are used to adapt the layout for smaller screens.
+```text
+GET /users
+GET /users/:id
+```
 
-## 📜 Available Scripts
+### Update
 
-### Development
+```text
+PUT /users/:id
+```
+
+### Delete
+
+```text
+DELETE /users/:id
+```
+
+## Local Installation
+
+### Clone the repository
+
+```bash
+git clone https://github.com/Akash230705/User-Management.git
+```
+
+### Navigate to the project
+
+```bash
+cd User-Management
+```
+
+### Install dependencies
+
+```bash
+npm install
+```
+
+## Run Frontend Locally
 
 ```bash
 npm run dev
 ```
 
-### Production Build
+Frontend:
+
+```text
+http://localhost:5173
+```
+
+## Run JSON Server Locally
+
+```bash
+npm run server
+```
+
+Local API:
+
+```text
+http://localhost:10000/users
+```
+
+For local development, use:
+
+```javascript
+const BASE_URL = "http://localhost:10000/users";
+```
+
+For production:
+
+```javascript
+const BASE_URL = "https://user-management-api-uutq.onrender.com/users";
+```
+
+## Available npm Scripts
+
+```bash
+npm run dev
+npm run build
+npm run preview
+npm run lint
+npm run server
+```
+
+## Production Deployment
+
+### Frontend — Vercel
+
+Build command:
 
 ```bash
 npm run build
 ```
 
-### Preview Production Build
+Output directory:
 
-```bash
-npm run preview
+```text
+dist
 ```
 
-## 🎯 Learning Objectives
+Install command:
+
+```bash
+npm install
+```
+
+### Backend — Render
+
+Build command:
+
+```bash
+npm install
+```
+
+Start command:
+
+```bash
+npm run server
+```
+
+JSON Server command:
+
+```bash
+json-server db.json --host 0.0.0.0 --port 10000
+```
+
+Production API:
+
+```text
+https://user-management-api-uutq.onrender.com/users
+```
+
+## Deployment Architecture
+
+```text
+Developer
+   |
+   v
+GitHub Repository
+   |
+   +--------------------+
+   |                    |
+   v                    v
+ Vercel               Render
+   |                    |
+   v                    v
+React + Vite       JSON Server
+   |                    |
+   |                    v
+   |                 db.json
+   |                    |
+   +------ Axios -------+
+```
+
+## UI & Design
+
+The application includes:
+
+- Premium color combinations
+- Responsive layouts
+- Modern user cards
+- Centered user detail forms
+- Rounded UI components
+- Interactive buttons
+- Hover effects
+- Loading states
+- Error states
+- Consistent spacing
+- Clean typography
+- Mobile-friendly layouts
+
+## Responsive Design
+
+The application is designed for:
+
+- Desktop
+- Laptop
+- Tablet
+- Mobile devices
+
+## Data Handling
+
+The API layer is separated into:
+
+```text
+src/services/api.js
+```
+
+This centralizes HTTP communication and keeps API logic separate from UI components.
+
+## Learning Objectives
 
 This project demonstrates practical knowledge of:
 
 - React component development
 - React Hooks
-- `useState`
-- `useEffect`
+- useState
+- useEffect
 - React Router
 - Dynamic routing
 - REST API integration
@@ -305,49 +389,49 @@ This project demonstrates practical knowledge of:
 - Form handling
 - Form validation
 - Responsive CSS
-- Git
-- GitHub
+- Error handling
+- Loading states
+- Git and GitHub
+- Vercel deployment
+- Render deployment
 
-## 🔮 Future Enhancements
+## Future Enhancements
 
-- 🔐 User authentication
-- 🔑 JWT-based authorization
-- 👨‍💼 Role-based access control
-- 🔎 Advanced filtering
-- 📄 Pagination
-- 📊 Dashboard analytics
-- 🌙 Dark mode
-- ☁️ Cloud database integration
-- 🚀 Spring Boot backend integration
-- 🐳 Docker deployment
-- ☁️ AWS deployment
+- JWT authentication
+- Role-based authorization
+- Advanced filtering
+- Pagination
+- Dashboard analytics
+- Dark mode
+- Database integration
+- Spring Boot backend
+- MySQL/PostgreSQL integration
+- Docker containerization
+- AWS deployment
+- CI/CD automation
 
-## 👨‍💻 Author
+## Author
 
 ### Akash Kumar
 
 **Java Full Stack Developer**
 
-### Technical Skills
+GitHub:
 
 ```text
-Java
-Spring Boot
-React
-JavaScript
-HTML
-CSS
-MySQL
-PostgreSQL
-Git
-GitHub
-REST APIs
+https://github.com/Akash230705
 ```
 
-## ⭐ Support
+Repository:
 
-If you find this project useful, consider giving the repository a ⭐ on GitHub.
+```text
+https://github.com/Akash230705/User-Management
+```
 
-## 📌 License
+## Support
 
-This project is created for learning and portfolio purposes.
+If you find this project useful, consider giving the repository a star on GitHub.
+
+## License
+
+This project is created for learning, development, and portfolio purposes.
